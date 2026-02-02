@@ -375,6 +375,98 @@ button {
     }
 }
 
+/* -------------------- Brand Carousel Section -------------------- */
+.brands-section {
+    background-color: var(--primary-color);
+    padding: 40px 0;
+    overflow: hidden;
+}
+
+.brands-container {
+    text-align: center;
+}
+
+.brands-label {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 24px;
+}
+
+.brands-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 10%,
+        black 90%,
+        transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 10%,
+        black 90%,
+        transparent 100%
+    );
+}
+
+.brands-track {
+    display: flex;
+    gap: 60px;
+    animation: scrollBrands 25s linear infinite;
+    width: max-content;
+}
+
+.brands-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollBrands {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.brand-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all var(--transition-medium);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.brand-item:hover {
+    border-color: var(--accent-color);
+    background-color: rgba(255, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.brand-name {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--bg-white);
+    white-space: nowrap;
+    transition: color var(--transition-fast);
+}
+
+.brand-item:hover .brand-name {
+    color: var(--accent-color);
+}
+
 /* -------------------- About Section -------------------- */
 .about {
     background-color: var(--bg-white);
@@ -982,6 +1074,23 @@ button {
 
     .nav-link {
         font-size: 24px;
+    }
+
+    /* Brand Carousel */
+    .brands-section {
+        padding: 32px 0;
+    }
+
+    .brands-track {
+        gap: 40px;
+    }
+
+    .brand-item {
+        padding: 12px 24px;
+    }
+
+    .brand-name {
+        font-size: 14px;
     }
 
     /* About */

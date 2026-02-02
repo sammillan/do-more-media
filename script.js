@@ -9,6 +9,7 @@ const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
 const navLinks = document.querySelectorAll('.nav-link');
 const projectButtons = document.querySelectorAll('.project-btn');
+const brandItems = document.querySelectorAll('.brand-item');
 const modalOverlay = document.getElementById('modalOverlay');
 const modalCloseButtons = document.querySelectorAll('.modal-close');
 const contactForm = document.getElementById('contactForm');
@@ -377,6 +378,15 @@ function initEventListeners() {
                 const projectId = card.dataset.project;
                 openModal(projectId);
             }
+        });
+    });
+
+    // Brand carousel item clicks
+    brandItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const videoId = item.dataset.video;
+            openModal(videoId);
         });
     });
 
